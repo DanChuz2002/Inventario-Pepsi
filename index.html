@@ -158,4 +158,508 @@
       border-radius: var(--radius-sm);
       padding: 0.75rem;
       font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-      f
+      font-size: 0.8rem;
+      color: var(--text-main);
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .mini-note {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .two-cols {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .two-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .data-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .data-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .data-box {
+      background-color: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .data-box p {
+      margin: 0.4rem 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 900px) {
+      .steps-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .step-card {
+      background-color: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .step-card h4 {
+      margin: 0 0 0.5rem;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .step-card b {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .task-box {
+      background-color: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .task-box ol {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .task-box li {
+      margin-bottom: 0.7rem;
+    }
+
+    .conclusion-list {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+      padding-left: 1rem;
+    }
+
+    .conclusion-list li {
+      margin-bottom: 0.6rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #666;
+      line-height: 1.4;
+      max-width: 800px;
+      margin: 2rem auto 4rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 400px;
+      font-size: 0.8rem;
+    }
+
+    th {
+      background-color: rgba(0, 102, 255, 0.15);
+      color: var(--text-main);
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+      color: var(--text-dim);
+      line-height: 1.4;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 500px) {
+      td, th {
+        white-space: normal;
+      }
+    }
+
+    .highlight-number {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .mini-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 1rem 0 0.5rem;
+    }
+
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- HEADER / PORTADA -->
+  <section class="header-grid">
+    <div class="logo-box">
+      <!-- Reemplaza esto por <img src="pepsi-logo.png"...> si querés -->
+      LOGO PEPSI
+    </div>
+
+    <div class="section-block">
+      <h1>Sistema de Inventario – Caso Pepsi (Planta Embotelladora)</h1>
+      <p class="muted">
+        Manejo de botellas vacías, tapas y jarabe concentrado para asegurar
+        producción continua sin quiebres de stock. Esta página explica
+        el sistema de control de inventario (EOQ, Stock de Seguridad,
+        Punto de Reorden) y presenta un caso práctico con datos simulados
+        de una planta embotelladora Pepsi.
+      </p>
+      <p class="muted" style="font-size:0.75rem;opacity:0.7;">
+        Proyecto académico · Valores aproximados · Uso en clase
+      </p>
+    </div>
+  </section>
+
+
+  <!-- GRID PRINCIPAL: Contexto / Sistema / Conclusiones rápidas -->
+  <section class="grid-main">
+
+    <!-- 1. CONTEXTO OPERATIVO -->
+    <article class="card">
+      <div class="card-header">
+        <div class="dot"></div>
+        <div>1. Contexto operativo</div>
+      </div>
+      <div class="card-content">
+        <p>
+          • Una planta embotelladora Pepsi necesita flujo constante de insumos:
+          botellas vacías, tapas, etiquetas y jarabe.
+        </p>
+        <p>
+          • Si falta un insumo por 1 día, la línea de llenado se detiene y
+          se pierden ventas inmediatas.
+        </p>
+        <p>
+          • Para evitar eso, se maneja
+          <strong>stock de seguridad</strong> y se aplican fórmulas de inventario.
+        </p>
+        <p>
+          • Meta: tener producto listo
+          <strong>sin saturar bodega</strong>, porque inventario excesivo = dinero
+          inmovilizado.
+        </p>
+        <p>
+          • El control gira alrededor de:
+          EOQ, Stock de Seguridad y Punto de Reorden.
+        </p>
+      </div>
+    </article>
+
+    <!-- 2. SISTEMA INVENTARIO / FÓRMULAS -->
+    <article class="card altglow" style="grid-column: span 2;">
+      <div class="card-header">
+        <div class="dot"></div>
+        <div>2. Sistema de control de inventario y fórmulas clave</div>
+      </div>
+
+      <div class="two-cols">
+
+        <!-- EOQ -->
+        <div class="subcard">
+          <h3>2.1 EOQ (Cantidad Económica de Pedido)</h3>
+          <p class="card-content" style="margin-bottom:0.75rem;">
+            Determina <strong>cuántas unidades pedir cada vez</strong> para
+            minimizar el costo total de pedir vs. almacenar inventario.
+          </p>
+          <div class="mini-code">
+            EOQ = √((2 × D × Co) / Cc)
+          </div>
+          <div class="mini-note">
+            D = Demanda anual (unid/año)<br/>
+            Co = Costo de hacer un pedido (Q por pedido)<br/>
+            Cc = Costo anual de mantener 1 unidad (Q por unidad·año)
+          </div>
+        </div>
+
+        <!-- STOCK SEGURIDAD -->
+        <div class="subcard">
+          <h3>2.2 Stock de Seguridad (Safety Stock)</h3>
+          <p class="card-content" style="margin-bottom:0.75rem;">
+            Inventario colchón usado cuando la demanda sube más de lo normal
+            o cuando el proveedor se atrasa.
+          </p>
+          <div class="mini-code">
+            SS = Z × σ<sub>d</sub> × √L
+          </div>
+          <div class="mini-note">
+            Z = Nivel de servicio deseado (ej. 1.65 ≈ 95%)<br/>
+            σ<sub>d</sub> = Variación (desviación estándar) de la demanda diaria<br/>
+            L = Lead time en días (lo que tarda el proveedor)
+          </div>
+        </div>
+
+        <!-- ROP -->
+        <div class="subcard" style="grid-column: span 2;">
+          <h3>2.3 Punto de Reorden (ROP)</h3>
+          <p class="card-content" style="margin-bottom:0.75rem;">
+            Nivel de inventario al que se dispara el siguiente pedido.
+          </p>
+          <div class="mini-code">
+            ROP = d × L + SS
+          </div>
+          <div class="mini-note">
+            d = Demanda diaria promedio<br/>
+            L = Lead time en días<br/>
+            SS = Stock de Seguridad
+          </div>
+          <p class="mini-note" style="margin-top:0.75rem;">
+            Cuando el inventario llega al ROP,
+            <strong>automáticamente se genera un nuevo pedido.</strong>
+          </p>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- 4. CONCLUSIONES RÁPIDAS -->
+    <article class="card">
+      <div class="card-header">
+        <div class="dot"></div>
+        <div>4. Conclusiones rápidas</div>
+      </div>
+      <ul class="conclusion-list">
+        <li>EOQ = <strong>cuánto pedir</strong> cada vez.</li>
+        <li>ROP = <strong>cuándo volver a pedir</strong>.</li>
+        <li>Stock de Seguridad = <strong>colchón de emergencia</strong>.</li>
+        <li>Mucho inventario = dinero parado en bodega.</li>
+        <li>Poco inventario = paro inmediato de producción.</li>
+      </ul>
+    </article>
+
+  </section>
+
+
+  <!-- CASO PRÁCTICO / DATOS -->
+  <section class="card altglow" style="box-shadow:0 30px 120px rgba(0, 102, 255, 0.35);">
+    <div class="card-header">
+      <div class="dot"></div>
+      <div>3. Caso práctico: Planta Embotelladora Pepsi Guatemala</div>
+    </div>
+
+    <div class="card-content" style="color:var(--text-main);">
+      Supongamos que la planta de Pepsi compra botellas plásticas vacías
+      a un proveedor externo. Para evitar parar la línea,
+      necesitamos saber:
+      <strong>cuánto pedir</strong> (EOQ),
+      <strong>cuándo pedir</strong> (ROP),
+      y <strong>cuánto guardar como colchón</strong> (Stock de Seguridad).
+    </div>
+
+    <p class="mini-note" style="margin-top:0.75rem;">
+      Nota: asumimos ~300 días de operación al año.
+    </p>
+
+    <div class="mini-title">Datos base:</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Dato</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Demanda anual (D)</td>
+            <td>2,400,000 botellas/año</td>
+          </tr>
+          <tr>
+            <td>Costo por pedido (Co)</td>
+            <td>Q 150 por pedido</td>
+          </tr>
+          <tr>
+            <td>Costo de mantener (Cc)</td>
+            <td>Q 0.05 por botella·año</td>
+          </tr>
+          <tr>
+            <td>Demanda diaria promedio (d)</td>
+            <td>8,000 botellas/día</td>
+          </tr>
+          <tr>
+            <td>Desviación estándar diaria (σd)</td>
+            <td>1,200 botellas</td>
+          </tr>
+          <tr>
+            <td>Lead time proveedor (L)</td>
+            <td>4 días</td>
+          </tr>
+          <tr>
+            <td>Nivel de servicio deseado (Z)</td>
+            <td>1.65 (≈95%)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mini-title">Resultados calculados:</div>
+    <div class="steps-grid">
+
+      <!-- Paso 1 -->
+      <div class="step-card">
+        <h4>Paso 1. EOQ</h4>
+        <p>
+          EOQ = √((2 × 2,400,000 × 150) / 0.05)
+        </p>
+        <p>
+          EOQ ≈ <span class="highlight-number">120,000 botellas</span> por pedido
+        </p>
+        <p>
+          Interpretación: conviene pedir ~120,000 botellas cada vez
+          para equilibrar costo de ordenar vs costo de almacenar.
+        </p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="step-card">
+        <h4>Paso 2. Stock de Seguridad</h4>
+        <p>
+          SS = 1.65 × 1,200 × √4
+        </p>
+        <p>
+          SS ≈ <span class="highlight-number">3,960 botellas</span> extra
+        </p>
+        <p>
+          Ese es el colchón para cubrir picos de demanda
+          o retrasos del camión proveedor.
+        </p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="step-card">
+        <h4>Paso 3. Punto de Reorden (ROP)</h4>
+        <p>
+          ROP = (8,000 bot/día × 4 días) + 3,960
+        </p>
+        <p>
+          = 32,000 + 3,960
+        </p>
+        <p>
+          ROP ≈ <span class="highlight-number">35,960 botellas</span>
+        </p>
+        <p>
+          Cuando el inventario baja a ~35,960 botellas,
+          se debe lanzar el siguiente pedido.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ACTIVIDAD / PREGUNTAS PARA EL ALUMNO -->
+  <section class="card">
+    <div class="card-header">
+      <div class="dot"></div>
+      <div>5. Actividad en clase</div>
+    </div>
+
+    <div class="task-box">
+      <ol>
+        <li>
+          Cambia el lead time a 6 días.
+          <br/>
+          • Recalcula Stock de Seguridad y ROP.<br/>
+          • ¿El ROP sube o baja? Explica.
+        </li>
+        <li>
+          Cambia la demanda diaria a 6,500 botellas/día.
+          <br/>
+          • ¿Cambia el EOQ?<br/>
+          • ¿Cambia el ROP? ¿Por qué?
+        </li>
+        <li>
+          Propón una política de compra para Pepsi:
+          <br/>
+          • ¿Cuántas veces al mes harías pedido?<br/>
+          • ¿Cuántas botellas cada vez?
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- CONCLUSIONES -->
+  <section class="card">
+    <div class="card-header">
+      <div class="dot"></div>
+      <div>6. Conclusiones</div>
+    </div>
+
+    <ul class="conclusion-list">
+      <li>
+        El costo de inventario no es sólo “tener cajas en bodega”.
+        También significa espacio físico, manejo, riesgo de daño/caducidad
+        y dinero inmovilizado.
+      </li>
+      <li>
+        EOQ define <strong>cuánto pedir</strong> por lote.
+      </li>
+      <li>
+        El Punto de Reorden (ROP) define <strong>cuándo pedir</strong> otra vez.
+      </li>
+      <li>
+        El Stock de Seguridad es tu <strong>plan B</strong>
+        para que la línea de Pepsi no se quede sin botellas.
+      </li>
+      <li>
+        Si fallan estos cálculos → paro de producción inmediato,
+        pérdida de ventas en el mismo día.
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    Proyecto académico. Los valores numéricos son aproximados
+    y se usan sólo para ejercicios de inventario.
+    <br/>
+    “Pepsi” se utiliza aquí con fines educativos como ejemplo
+    de una planta embotelladora.
+  </footer>
+
+</main>
+</body>
+</html>
