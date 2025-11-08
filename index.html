@@ -29,10 +29,7 @@
       --mono-stack: ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
     }
 
-    * {
-      box-sizing:border-box;
-      -webkit-font-smoothing: antialiased;
-    }
+    * { box-sizing:border-box; -webkit-font-smoothing: antialiased; }
 
     body {
       margin:0;
@@ -47,476 +44,102 @@
 
     /* NAVBAR */
     header.navbar {
-      position:sticky;
-      top:0;
-      z-index:1000;
+      position:sticky; top:0; z-index:1000;
       background:rgba(0,0,0,.4);
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(255,255,255,.07);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:flex; align-items:center; justify-content:center;
     }
-
-    .nav-inner {
-      width:100%;
-      max-width:1300px;
-      display:flex;
-      align-items:center;
-      gap:1rem;
-      padding:.75rem 1rem;
-    }
-
-    .nav-left {
-      display:flex;
-      align-items:center;
-      gap:.75rem;
-      min-width:0;
-    }
-
-    .logo-box-nav {
-      background:#fff;
-      border-radius:var(--radius-md);
-      box-shadow:0 20px 60px rgba(0,102,255,.55);
-      width:40px;
-      height:40px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-
-    .logo-box-nav img {
-      max-height:28px;
-      width:auto;
-      display:block;
-    }
-
-    .nav-titles {
-      display:flex;
-      flex-direction:column;
-      line-height:1.2;
-    }
-
-    .nav-company {
-      font-size:.8rem;
-      font-weight:600;
-      color:var(--accent);
-    }
-
-    .nav-subtitle {
-      font-size:.7rem;
-      color:var(--text-dim);
-    }
-
-    nav.nav-links {
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem .75rem;
-      margin-left:auto;
-    }
-
+    .nav-inner { width:100%; max-width:1300px; display:flex; align-items:center; gap:1rem; padding:.75rem 1rem; }
+    .nav-left { display:flex; align-items:center; gap:.75rem; min-width:0; }
+    .logo-box-nav { background:#fff; border-radius:var(--radius-md); box-shadow:0 20px 60px rgba(0,102,255,.55); width:40px; height:40px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .logo-box-nav img { max-height:28px; width:auto; display:block; }
+    .nav-titles { display:flex; flex-direction:column; line-height:1.2; }
+    .nav-company { font-size:.8rem; font-weight:600; color:var(--accent); }
+    .nav-subtitle { font-size:.7rem; color:var(--text-dim); }
+    nav.nav-links { display:flex; flex-wrap:wrap; gap:.5rem .75rem; margin-left:auto; }
     nav.nav-links a {
-      text-decoration:none;
-      color:var(--text-dim);
-      font-size:.8rem;
-      font-weight:500;
-      padding:.4rem .75rem;
-      border-radius:var(--radius-full);
-      border:1px solid rgba(255,255,255,.07);
-      background-color:rgba(255,255,255,.02);
+      text-decoration:none; color:var(--text-dim); font-size:.8rem; font-weight:500;
+      padding:.4rem .75rem; border-radius:var(--radius-full);
+      border:1px solid rgba(255,255,255,.07); background-color:rgba(255,255,255,.02);
       transition:all .15s ease;
     }
-
-    nav.nav-links a:hover {
-      color:var(--text-main);
-      border-color:var(--accent);
-      box-shadow:0 0 20px var(--accent-strong);
-    }
+    nav.nav-links a:hover { color:var(--text-main); border-color:var(--accent); box-shadow:0 0 20px var(--accent-strong); }
 
     /* MAIN LAYOUT */
     main.page {
-      width:100%;
-      max-width:1300px;
-      margin:2rem auto 5rem;
-      padding:0 1rem 4rem;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:2rem;
+      width:100%; max-width:1300px; margin:2rem auto 5rem; padding:0 1rem 4rem;
+      display:grid; grid-template-columns:1fr; gap:2rem;
     }
-
     @media(min-width:900px){
-      main.page {
-        grid-template-columns:minmax(0,1fr) 320px;
-        align-items:start;
-      }
+      main.page { grid-template-columns:minmax(0,1fr) 320px; align-items:start; }
     }
 
     /* HERO / RESUMEN */
     .hero-card {
-      background:var(--panel);
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-xl);
+      background:var(--panel); border:1px solid var(--panel-border); border-radius:var(--radius-xl);
       box-shadow:var(--shadow-glow),var(--shadow-soft);
       padding:1.5rem 1.25rem 1.25rem;
-      display:grid;
-      grid-template-columns:minmax(130px,180px) 1fr;
-      gap:1.5rem;
+      display:grid; grid-template-columns:minmax(130px,180px) 1fr; gap:1.5rem;
     }
-
-    @media(max-width:650px){
-      .hero-card{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .hero-logo-box {
-      background:#fff;
-      color:#000;
-      border-radius:var(--radius-lg);
-      box-shadow:0 30px 120px rgba(0,102,255,.5);
-      min-height:120px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:1rem;
-      text-align:center;
-      font-size:.8rem;
-      font-weight:600;
-    }
-
-    .hero-logo-box img {
-      max-height:70px;
-      width:auto;
-      display:block;
-    }
-
-    .hero-content-title {
-      display:flex;
-      flex-direction:column;
-      gap:.75rem;
-    }
-
-    .hero-eyebrow {
-      font-size:.75rem;
-      font-weight:600;
-      color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:.04em;
-    }
-
-    .hero-title {
-      font-size:clamp(1.2rem,1vw + 1rem,1.8rem);
-      font-weight:600;
-      line-height:1.25;
-      color:var(--text-main);
-      max-width:38ch;
-    }
-
-    .hero-desc {
-      font-size:.9rem;
-      color:var(--text-dim);
-      max-width:60ch;
-      line-height:1.5;
-    }
-
-    .hero-meta {
-      font-size:.7rem;
-      color:var(--text-dim);
-      opacity:.7;
-    }
-
-    .hero-actions {
-      display:flex;
-      flex-wrap:wrap;
-      gap:.6rem;
-      margin-top:.75rem;
-    }
-
-    .btn {
-      font-size:.8rem;
-      font-weight:500;
-      text-decoration:none;
-      border-radius:var(--radius-full);
-      padding:.55rem .9rem;
-      line-height:1.2;
-      border:1px solid transparent;
-      cursor:pointer;
-      transition:all .15s;
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-    }
-
-    .btn.primary {
-      background:var(--accent);
-      color:#fff;
-      box-shadow:0 20px 60px var(--accent-strong);
-      border-color:rgba(255,255,255,.1);
-    }
-    .btn.primary:hover {
-      box-shadow:0 30px 100px var(--accent-strong);
-      filter:brightness(1.1);
-    }
-
-    .btn.ghost {
-      background:rgba(255,255,255,.03);
-      color:var(--text-main);
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .btn.ghost:hover {
-      border-color:var(--accent);
-      box-shadow:0 0 20px var(--accent-strong);
-      color:var(--accent);
-    }
+    @media(max-width:650px){ .hero-card{ grid-template-columns:1fr; } }
+    .hero-logo-box { background:#fff; color:#000; border-radius:var(--radius-lg); box-shadow:0 30px 120px rgba(0,102,255,.5); min-height:120px; display:flex; align-items:center; justify-content:center; padding:1rem; text-align:center; font-size:.8rem; font-weight:600; }
+    .hero-logo-box img { max-height:70px; width:auto; display:block; }
+    .hero-content-title { display:flex; flex-direction:column; gap:.75rem; }
+    .hero-eyebrow { font-size:.75rem; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:.04em; }
+    .hero-title { font-size:clamp(1.2rem,1vw + 1rem,1.8rem); font-weight:600; line-height:1.25; color:var(--text-main); max-width:38ch; }
+    .hero-desc { font-size:.9rem; color:var(--text-dim); max-width:60ch; line-height:1.5; }
+    .hero-meta { font-size:.7rem; color:var(--text-dim); opacity:.7; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.75rem; }
+    .btn { font-size:.8rem; font-weight:500; text-decoration:none; border-radius:var(--radius-full); padding:.55rem .9rem; line-height:1.2; border:1px solid transparent; cursor:pointer; transition:all .15s; display:inline-flex; align-items:center; gap:.4rem; }
+    .btn.primary { background:var(--accent); color:#fff; box-shadow:0 20px 60px var(--accent-strong); border-color:rgba(255,255,255,.1); }
+    .btn.primary:hover { box-shadow:0 30px 100px var(--accent-strong); filter:brightness(1.1); }
+    .btn.ghost { background:rgba(255,255,255,.03); color:var(--text-main); border:1px solid rgba(255,255,255,.12); }
+    .btn.ghost:hover { border-color:var(--accent); box-shadow:0 0 20px var(--accent-strong); color:var(--accent); }
 
     /* KPI PANEL (derecha en desktop) */
-    .side-panel {
-      background:var(--panel);
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-xl);
-      box-shadow:var(--shadow-soft);
-      padding:1.25rem 1rem 1rem;
-      height:max-content;
-    }
-
-    .side-title {
-      color:var(--accent);
-      font-weight:600;
-      font-size:.9rem;
-      margin:0 0 .75rem;
-      display:flex;
-      align-items:center;
-      gap:.5rem;
-    }
-
-    .kpi-grid {
-      display:grid;
-      gap:1rem;
-    }
-
-    .kpi-card {
-      background:var(--card-bg);
-      border:1px solid var(--border-card);
-      border-radius:var(--radius-lg);
-      padding:1rem;
-      font-size:.8rem;
-      line-height:1.4;
-      box-shadow:0 20px 80px rgba(0,102,255,.28);
-    }
-
-    .kpi-label {
-      font-size:.7rem;
-      color:var(--text-dim);
-      margin-bottom:.4rem;
-      display:flex;
-      align-items:center;
-      gap:.4rem;
-    }
-    .kpi-label .dot {
-      width:8px;
-      height:8px;
-      border-radius:var(--radius-full);
-      background:var(--accent);
-      box-shadow:0 0 10px var(--accent);
-    }
-
-    .kpi-value {
-      color:var(--text-main);
-      font-weight:600;
-      font-size:1rem;
-      line-height:1.2;
-    }
-
-    .kpi-hint {
-      color:var(--text-dim);
-      font-size:.7rem;
-      line-height:1.4;
-      margin-top:.4rem;
-    }
+    .side-panel { background:var(--panel); border:1px solid var(--panel-border); border-radius:var(--radius-xl); box-shadow:var(--shadow-soft); padding:1.25rem 1rem 1rem; height:max-content; }
+    .side-title { color:var(--accent); font-weight:600; font-size:.9rem; margin:0 0 .75rem; display:flex; align-items:center; gap:.5rem; }
+    .kpi-grid { display:grid; gap:1rem; }
+    .kpi-card { background:var(--card-bg); border:1px solid var(--border-card); border-radius:var(--radius-lg); padding:1rem; font-size:.8rem; line-height:1.4; box-shadow:0 20px 80px rgba(0,102,255,.28); }
+    .kpi-label { font-size:.7rem; color:var(--text-dim); margin-bottom:.4rem; display:flex; align-items:center; gap:.4rem; }
+    .kpi-label .dot { width:8px; height:8px; border-radius:var(--radius-full); background:var(--accent); box-shadow:0 0 10px var(--accent); }
+    .kpi-value { color:var(--text-main); font-weight:600; font-size:1rem; line-height:1.2; }
+    .kpi-hint { color:var(--text-dim); font-size:.7rem; line-height:1.4; margin-top:.4rem; }
 
     /* SECTION CARD BLOCKS */
-    .section-block {
-      background:var(--panel);
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-xl);
-      box-shadow:var(--shadow-soft);
-      padding:1.25rem 1rem 1rem;
-      margin-top:1rem;
-    }
-
-    .section-header {
-      display:flex;
-      flex-wrap:wrap;
-      align-items:flex-start;
-      gap:.6rem;
-      margin-bottom:.75rem;
-    }
-
-    .section-bullet {
-      width:9px;
-      height:9px;
-      border-radius:var(--radius-full);
-      background:var(--accent);
-      box-shadow:0 0 10px var(--accent);
-      flex-shrink:0;
-      margin-top:.4rem;
-    }
-
-    .section-title {
-      font-weight:600;
-      font-size:1rem;
-      color:var(--accent);
-      line-height:1.3;
-    }
-
-    .section-desc {
-      font-size:.85rem;
-      color:var(--text-dim);
-      line-height:1.5;
-      margin:0 0 .75rem;
-    }
+    .section-block { background:var(--panel); border:1px solid var(--panel-border); border-radius:var(--radius-xl); box-shadow:var(--shadow-soft); padding:1.25rem 1rem 1rem; margin-top:1rem; }
+    .section-header { display:flex; flex-wrap:wrap; align-items:flex-start; gap:.6rem; margin-bottom:.75rem; }
+    .section-bullet { width:9px; height:9px; border-radius:var(--radius-full); background:var(--accent); box-shadow:0 0 10px var(--accent); flex-shrink:0; margin-top:.4rem; }
+    .section-title { font-weight:600; font-size:1rem; color:var(--accent); line-height:1.3; }
+    .section-desc { font-size:.85rem; color:var(--text-dim); line-height:1.5; margin:0 0 .75rem; }
 
     /* GRID columnas dentro de secciones */
-    .triple-col {
-      display:grid;
-      gap:1rem;
-    }
-    @media(min-width:900px){
-      .triple-col {
-        grid-template-columns:repeat(3,1fr);
-      }
-    }
+    .triple-col { display:grid; gap:1rem; }
+    @media(min-width:900px){ .triple-col { grid-template-columns:repeat(3,1fr); } }
+    .subcard { background:var(--glass-bg); border:1px solid var(--panel-border); border-radius:var(--radius-lg); padding:1rem; box-shadow:0 30px 100px var(--accent-soft); font-size:.8rem; color:var(--text-dim); line-height:1.5; }
+    .subcard h3 { margin:0 0 .5rem; font-size:.9rem; font-weight:600; color:var(--text-main); line-height:1.3; }
 
-    .subcard {
-      background:var(--glass-bg);
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-lg);
-      padding:1rem;
-      box-shadow:0 30px 100px var(--accent-soft);
-      font-size:.8rem;
-      color:var(--text-dim);
-      line-height:1.5;
-    }
-
-    .subcard h3 {
-      margin:0 0 .5rem;
-      font-size:.9rem;
-      font-weight:600;
-      color:var(--text-main);
-      line-height:1.3;
-    }
-
-    .mini-code {
-      background-color:rgba(0,0,0,.4);
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-md);
-      padding:.75rem;
-      font-family:var(--mono-stack);
-      font-size:.75rem;
-      color:var(--text-main);
-      line-height:1.4;
-      word-break:break-word;
-    }
-
-    .mini-note {
-      font-size:.7rem;
-      color:var(--text-dim);
-      line-height:1.5;
-      margin-top:.5rem;
-    }
+    .mini-code { background-color:rgba(0,0,0,.4); border:1px solid var(--panel-border); border-radius:var(--radius-md); padding:.75rem; font-family:var(--mono-stack); font-size:.75rem; color:var(--text-main); line-height:1.4; word-break:break-word; }
+    .mini-note { font-size:.7rem; color:var(--text-dim); line-height:1.5; margin-top:.5rem; }
 
     /* TABLA DE DATOS */
-    .table-wrapper {
-      overflow-x:auto;
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-lg);
-      background:var(--glass-bg);
-      box-shadow:0 30px 100px rgba(0,102,255,.2);
-      margin-top:1rem;
-    }
-
-    table {
-      width:100%;
-      border-collapse:collapse;
-      min-width:400px;
-      font-size:.8rem;
-      color:var(--text-dim);
-    }
-
-    th {
-      text-align:left;
-      padding:.75rem;
-      border-bottom:1px solid var(--panel-border);
-      font-weight:600;
-      color:var(--text-main);
-      white-space:nowrap;
-      background:rgba(0,102,255,.15);
-    }
-
-    td {
-      padding:.6rem .75rem;
-      border-bottom:1px solid var(--panel-border);
-      vertical-align:top;
-      line-height:1.4;
-      color:var(--text-dim);
-      white-space:nowrap;
-    }
-    @media(max-width:500px){
-      td,th{white-space:normal;}
-    }
-
-    .highlight-number {
-      font-weight:600;
-      color:var(--text-main);
-    }
-
-    /* ACTIVIDAD EN CLASE */
-    .task-box {
-      background:var(--glass-bg);
-      border:1px solid var(--panel-border);
-      border-radius:var(--radius-lg);
-      font-size:.8rem;
-      color:var(--text-dim);
-      line-height:1.5;
-      padding:1rem;
-    }
-    .task-box ol {
-      margin:0;
-      padding-left:1rem;
-    }
-    .task-box li {
-      margin-bottom:.8rem;
-    }
+    .table-wrapper { overflow-x:auto; border:1px solid var(--panel-border); border-radius:var(--radius-lg); background:var(--glass-bg); box-shadow:0 30px 100px rgba(0,102,255,.2); margin-top:1rem; }
+    table { width:100%; border-collapse:collapse; min-width:400px; font-size:.8rem; color:var(--text-dim); }
+    th { text-align:left; padding:.75rem; border-bottom:1px solid var(--panel-border); font-weight:600; color:var(--text-main); white-space:nowrap; background:rgba(0,102,255,.15); }
+    td { padding:.6rem .75rem; border-bottom:1px solid var(--panel-border); vertical-align:top; line-height:1.4; color:var(--text-dim); white-space:nowrap; }
+    @media(max-width:500px){ td,th{white-space:normal;} }
+    .highlight-number { font-weight:600; color:var(--text-main); }
 
     /* LISTA DE CONCLUSIONES */
-    .conclusion-list {
-      font-size:.8rem;
-      color:var(--text-dim);
-      line-height:1.5;
-      margin:0;
-      padding-left:1rem;
-    }
-    .conclusion-list li {
-      margin-bottom:.6rem;
-    }
+    .conclusion-list { font-size:.8rem; color:var(--text-dim); line-height:1.5; margin:0; padding-left:1rem; }
+    .conclusion-list li { margin-bottom:.6rem; }
 
     /* FOOTER */
-    footer.site-footer {
-      width:100%;
-      max-width:1300px;
-      margin:auto auto 3rem;
-      padding:1rem;
-      font-size:.7rem;
-      color:#6a708c;
-      text-align:center;
-      line-height:1.4;
-    }
+    footer.site-footer { width:100%; max-width:1300px; margin:auto auto 3rem; padding:1rem; font-size:.7rem; color:#6a708c; text-align:center; line-height:1.4; }
 
-    /* ANCLAS para navegación */
-    section[id] {
-      scroll-margin-top:5rem;
-    }
+    /* ANCLAS */
+    section[id] { scroll-margin-top:5rem; }
   </style>
 </head>
 
@@ -528,7 +151,6 @@
 
       <div class="nav-left">
         <div class="logo-box-nav">
-          <!-- tu logo mini -->
           <img src="pepsi.webp" alt="Pepsi"/>
         </div>
 
@@ -542,7 +164,7 @@
         <a href="#resumen">Inicio</a>
         <a href="#formulas">Fórmulas</a>
         <a href="#caso">Caso Práctico</a>
-        <a href="#actividad">Actividad</a>
+        <a href="#plan">Plan</a>
         <a href="#conclusiones">Conclusiones</a>
       </nav>
     </div>
@@ -572,7 +194,7 @@
             para asegurar producción continua sin quiebres de stock.
             Este informe explica el modelo de inventario (EOQ, Stock de Seguridad,
             Punto de Reorden), lo aplica con datos reales simulados y deja
-            preguntas de análisis operativo.
+            lineamientos operativos.
           </div>
 
           <div class="hero-meta">
@@ -580,12 +202,8 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#caso">
-              📊 Ver cálculos
-            </a>
-            <a class="btn ghost" href="#actividad">
-              ✅ Actividad en clase
-            </a>
+            <a class="btn primary" href="#caso">📊 Ver cálculos</a>
+            <a class="btn ghost" href="#plan">📅 Ver plan de abastecimiento</a>
           </div>
         </div>
       </section>
@@ -604,9 +222,7 @@
           la línea de llenado se detiene y se pierden ventas inmediatas.
         </p>
 
-        <p class="section-desc">
-          Para evitar paros, la empresa mantiene:
-        </p>
+        <p class="section-desc">Para evitar paros, la empresa mantiene:</p>
 
         <ul class="conclusion-list" style="margin-bottom:1rem;">
           <li><strong>Stock de seguridad</strong>: colchón mínimo.</li>
@@ -634,19 +250,10 @@
         </p>
 
         <div class="triple-col">
-
-          <!-- EOQ -->
           <div class="subcard">
             <h3>2.1 EOQ (Cantidad Económica de Pedido)</h3>
-            <p>
-              Determina <strong>cuántas unidades pedir cada vez</strong>
-              para minimizar el costo total de ordenar y almacenar inventario.
-            </p>
-
-            <div class="mini-code">
-              EOQ = √( (2 × D × Co) / Cc )
-            </div>
-
+            <p>Determina <strong>cuántas unidades pedir cada vez</strong> para minimizar el costo total de ordenar y almacenar inventario.</p>
+            <div class="mini-code">EOQ = √( (2 × D × Co) / Cc )</div>
             <div class="mini-note">
               D = Demanda anual (unidades / año)<br/>
               Co = Costo de colocar un pedido (Q / pedido)<br/>
@@ -654,18 +261,10 @@
             </div>
           </div>
 
-          <!-- STOCK SEGURIDAD -->
           <div class="subcard">
             <h3>2.2 Stock de Seguridad (SS)</h3>
-            <p>
-              Inventario “colchón” cuando la demanda sube inesperadamente
-              o el proveedor se atrasa.
-            </p>
-
-            <div class="mini-code">
-              SS = Z × σ<sub>d</sub> × √L
-            </div>
-
+            <p>Inventario “colchón” cuando la demanda sube inesperadamente o el proveedor se atrasa.</p>
+            <div class="mini-code">SS = Z × σ<sub>d</sub> × √L</div>
             <div class="mini-note">
               Z = Nivel de servicio deseado (ej. 1.65 ≈ 95%)<br/>
               σ<sub>d</sub> = Desviación estándar de demanda diaria<br/>
@@ -673,24 +272,16 @@
             </div>
           </div>
 
-          <!-- ROP -->
           <div class="subcard">
             <h3>2.3 Punto de Reorden (ROP)</h3>
-            <p>
-              Nivel de inventario al que se dispara el siguiente pedido.
-            </p>
-
-            <div class="mini-code">
-              ROP = d × L + SS
-            </div>
-
+            <p>Nivel de inventario al que se dispara el siguiente pedido.</p>
+            <div class="mini-code">ROP = d × L + SS</div>
             <div class="mini-note">
               d = Demanda promedio diaria<br/>
               L = Lead time en días<br/>
               SS = Stock de Seguridad
             </div>
           </div>
-
         </div>
       </section>
 
@@ -705,8 +296,7 @@
           Supongamos que la planta compra <strong>botellas plásticas vacías</strong>
           a un proveedor externo. Queremos saber:
           <strong>cuánto pedir</strong> (EOQ),
-          <strong>cuándo pedir</strong> (ROP)
-          y
+          <strong>cuándo pedir</strong> (ROP) y
           <strong>cuánto tener de colchón</strong> (SS).
         </p>
 
@@ -714,143 +304,115 @@
           Asumimos ~300 días de operación al año.
         </p>
 
-        <h4 style="color:var(--text-main);font-size:.8rem;font-weight:600;margin:.5rem 0;">
-          Datos base
-        </h4>
+        <h4 style="color:var(--text-main);font-size:.8rem;font-weight:600;margin:.5rem 0;">Datos base</h4>
 
         <div class="table-wrapper">
           <table>
-            <thead>
-              <tr>
-                <th>Dato</th>
-                <th>Valor</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Demanda anual (D)</td>
-                <td>2,400,000 botellas/año</td>
-              </tr>
-              <tr>
-                <td>Costo por pedido (Co)</td>
-                <td>Q 150 por pedido</td>
-              </tr>
-              <tr>
-                <td>Costo de mantener (Cc)</td>
-                <td>Q 0.05 por botella·año</td>
-              </tr>
-              <tr>
-                <td>Demanda diaria promedio (d)</td>
-                <td>8,000 botellas/día</td>
-              </tr>
-              <tr>
-                <td>Desv. estándar diaria (σd)</td>
-                <td>1,200 botellas</td>
-              </tr>
-              <tr>
-                <td>Lead time proveedor (L)</td>
-                <td>4 días</td>
-              </tr>
-              <tr>
-                <td>Nivel de servicio (Z)</td>
-                <td>1.65 (~95%)</td>
-              </tr>
+              <tr><td>Demanda anual (D)</td><td>2,400,000 botellas/año</td></tr>
+              <tr><td>Costo por pedido (Co)</td><td>Q 150 por pedido</td></tr>
+              <tr><td>Costo de mantener (Cc)</td><td>Q 0.05 por botella·año</td></tr>
+              <tr><td>Demanda diaria promedio (d)</td><td>8,000 botellas/día</td></tr>
+              <tr><td>Desv. estándar diaria (σd)</td><td>1,200 botellas</td></tr>
+              <tr><td>Lead time proveedor (L)</td><td>4 días</td></tr>
+              <tr><td>Nivel de servicio (Z)</td><td>1.65 (~95%)</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h4 style="color:var(--text-main);font-size:.8rem;font-weight:600;margin:1rem 0 .5rem;">
-          Resultados calculados
-        </h4>
+        <h4 style="color:var(--text-main);font-size:.8rem;font-weight:600;margin:1rem 0 .5rem;">Resultados calculados</h4>
 
         <div class="triple-col">
-
           <div class="subcard">
             <h3>Paso 1. EOQ</h3>
-            <p class="mini-note" style="margin-top:0;">
-              EOQ = √((2 × 2,400,000 × 150) / 0.05)
-            </p>
+            <p class="mini-note" style="margin-top:0;">EOQ = √((2 × 2,400,000 × 150) / 0.05)</p>
             <p style="color:var(--text-dim);font-size:.8rem;">
-              EOQ ≈
-              <span class="highlight-number">120,000 botellas</span>
-              por pedido
+              EOQ ≈ <span class="highlight-number">120,000 botellas</span> por pedido
             </p>
-            <p class="mini-note">
-              “¿Cuánto pido cada vez para que el costo total sea mínimo?”
-            </p>
+            <p class="mini-note">“¿Cuánto pido cada vez para que el costo total sea mínimo?”</p>
           </div>
 
           <div class="subcard">
             <h3>Paso 2. Stock de Seguridad</h3>
-            <p class="mini-note" style="margin-top:0;">
-              SS = 1.65 × 1,200 × √4
-            </p>
+            <p class="mini-note" style="margin-top:0;">SS = 1.65 × 1,200 × √4</p>
             <p style="color:var(--text-dim);font-size:.8rem;">
-              SS ≈
-              <span class="highlight-number">3,960 botellas</span>
-              extra
+              SS ≈ <span class="highlight-number">3,960 botellas</span> extra
             </p>
-            <p class="mini-note">
-              Colchón contra picos de demanda o retrasos de camión.
-            </p>
+            <p class="mini-note">Colchón contra picos de demanda o retrasos de camión.</p>
           </div>
 
           <div class="subcard">
             <h3>Paso 3. Punto de Reorden (ROP)</h3>
-            <p class="mini-note" style="margin-top:0;">
-              ROP = (8,000 × 4) + 3,960
-              = 32,000 + 3,960
-            </p>
+            <p class="mini-note" style="margin-top:0;">ROP = (8,000 × 4) + 3,960 = 32,000 + 3,960</p>
             <p style="color:var(--text-dim);font-size:.8rem;">
-              ROP ≈
-              <span class="highlight-number">35,960 botellas</span>
+              ROP ≈ <span class="highlight-number">35,960 botellas</span>
             </p>
-            <p class="mini-note">
-              Cuando el inventario baja ~35,960 botellas,
-              se debe lanzar el siguiente pedido.
-            </p>
+            <p class="mini-note">Cuando el inventario baja ~35,960 botellas, se debe lanzar el siguiente pedido.</p>
           </div>
-
         </div>
       </section>
 
-      <!-- SECCIÓN: ACTIVIDAD -->
-      <section class="section-block" id="actividad">
+      <!-- SECCIÓN NUEVA: PLAN DE ABASTECIMIENTO -->
+      <section class="section-block" id="plan">
         <div class="section-header">
           <div class="section-bullet"></div>
-          <div class="section-title">4. Actividad en clase</div>
+          <div class="section-title">4. Plan de Abastecimiento</div>
         </div>
 
-        <div class="task-box">
-          <ol>
-            <li>
-              Cambia el lead time a <strong>6 días</strong>.<br/>
-              • Recalcula Stock de Seguridad (SS) y ROP.<br/>
-              • ¿El ROP sube o baja? Explica con lógica de riesgo.
-            </li>
+        <p class="section-desc">
+          Lineamientos operativos para sostener el nivel de servicio objetivo (~95%) con mínimos costos:
+        </p>
 
-            <li>
-              Cambia la demanda diaria a <strong>6,500 botellas/día</strong>.<br/>
-              • ¿Cambia el EOQ?<br/>
-              • ¿Cambia el ROP? ¿Por qué?
-            </li>
+        <div class="triple-col">
+          <div class="subcard">
+            <h3>Política de compra</h3>
+            <div class="mini-code">
+              • Tamaño de lote: ~120,000 botellas (EOQ)<br/>
+              • Frecuencia objetivo: 2–3 pedidos/mes*<br/>
+              • Punto de reorden: ~35,960 botellas (ROP)
+            </div>
+            <div class="mini-note">*Con ~8,000/día, el lote cubre ~15 días netos (sin considerar SS).</div>
+          </div>
 
-            <li>
-              Diseña una <strong>política de compra mensual</strong> para Pepsi:<br/>
-              • ¿Cuántas veces al mes harías pedido?<br/>
-              • ¿Cuántas botellas por pedido?<br/>
-              • ¿Cuál sería tu inventario mínimo antes de alarmarte?
-            </li>
-          </ol>
+          <div class="subcard">
+            <h3>Calendario de recepción</h3>
+            <p style="margin:0;">
+              Programar entregas cada ~10–12 días.
+              Confirmar <strong>L=4 días</strong> con proveedor y bloquear muelle.
+            </p>
+            <div class="mini-note">Si el lead time se extiende, aumentar SS y ajustar ROP inmediatamente.</div>
+          </div>
+
+          <div class="subcard">
+            <h3>Alertas & escalamiento</h3>
+            <div class="mini-code">
+              • Alerta amarilla: &lt; 1.2 × ROP<br/>
+              • Alerta roja: &lt; ROP (orden inmediato)<br/>
+              • Escalar si ETA &gt; L + 1 día
+            </div>
+            <div class="mini-note">Integrar con correo/Teams y tablero diario de piso.</div>
+          </div>
+        </div>
+
+        <h4 style="color:var(--text-main);font-size:.8rem;font-weight:600;margin:1rem 0 .5rem;">Calendario tentativo (30 días)</h4>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr><th>Semana</th><th>Acción</th><th>Detalle</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Semana 1</td><td>Recepción</td><td>Lote #1 ~120,000 · Verificar calidad y conteo</td></tr>
+              <tr><td>Semana 2</td><td>Monitoreo</td><td>Inventario proyectado vs. consumo real · Ajustar SS si σd sube</td></tr>
+              <tr><td>Semana 3</td><td>Recepción</td><td>Lote #2 ~120,000 · Confirmar espacio en bodega</td></tr>
+              <tr><td>Semana 4</td><td>Revisión</td><td>KPIs: fill rate, días de inventario, mermas · Recalcular EOQ si Co/Cc cambian</td></tr>
+            </tbody>
+          </table>
         </div>
 
         <div class="hero-actions" style="margin-top:1rem;">
-          <a class="btn primary" href="#formulas">
-            📐 Ver fórmulas otra vez
-          </a>
-          <a class="btn ghost" href="#conclusiones">
-            📌 Ir a conclusiones
-          </a>
+          <a class="btn primary" href="#formulas">📐 Ver fórmulas</a>
+          <a class="btn ghost" href="#conclusiones">📌 Ir a conclusiones</a>
         </div>
       </section>
 
@@ -862,26 +424,11 @@
         </div>
 
         <ul class="conclusion-list">
-          <li>
-            El inventario no es solo cajas en bodega:
-            también es capital inmovilizado, espacio físico,
-            riesgo de daño/caducidad.
-          </li>
-          <li>
-            <strong>EOQ</strong> define <em>cuánto pedir</em> por lote.
-          </li>
-          <li>
-            <strong>ROP</strong> define <em>cuándo volver a pedir</em>.
-          </li>
-          <li>
-            <strong>Stock de Seguridad</strong> es tu plan B:
-            evita parar producción por retrasos del proveedor.
-          </li>
-          <li>
-            Si estos cálculos fallan,
-            la línea de Pepsi se detiene ese mismo día
-            y se pierden ventas reales.
-          </li>
+          <li>El inventario no es solo cajas en bodega: también es capital inmovilizado, espacio físico y riesgo de caducidad.</li>
+          <li><strong>EOQ</strong> define <em>cuánto pedir</em> por lote.</li>
+          <li><strong>ROP</strong> define <em>cuándo volver a pedir</em>.</li>
+          <li><strong>Stock de Seguridad</strong> evita parar producción ante variabilidad.</li>
+          <li>Si estos cálculos fallan, la línea se detiene y se pierden ventas reales.</li>
         </ul>
       </section>
 
@@ -897,55 +444,33 @@
 
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-label">
-            <span class="dot"></span>
-            EOQ (lote óptimo)
-          </div>
+          <div class="kpi-label"><span class="dot"></span>EOQ (lote óptimo)</div>
           <div class="kpi-value">≈ 120,000 botellas</div>
-          <div class="kpi-hint">
-            Tamaño de pedido que balancea costo de ordenar
-            vs costo de almacenar.
-          </div>
+          <div class="kpi-hint">Tamaño de pedido que balancea costo de ordenar vs costo de almacenar.</div>
         </div>
 
         <div class="kpi-card">
-          <div class="kpi-label">
-            <span class="dot"></span>
-            Stock de Seguridad
-          </div>
+          <div class="kpi-label"><span class="dot"></span>Stock de Seguridad</div>
           <div class="kpi-value">≈ 3,960 botellas</div>
-          <div class="kpi-hint">
-            Margen para picos de consumo
-            o retrasos del proveedor.
-          </div>
+          <div class="kpi-hint">Margen para picos de consumo o retrasos del proveedor.</div>
         </div>
 
         <div class="kpi-card">
-          <div class="kpi-label">
-            <span class="dot"></span>
-            Punto de Reorden (ROP)
-          </div>
+          <div class="kpi-label"><span class="dot"></span>Punto de Reorden (ROP)</div>
           <div class="kpi-value">≈ 35,960 botellas</div>
-          <div class="kpi-hint">
-            Cuando el inventario real llega a este nivel,
-            debe generarse un nuevo pedido inmediato.
-          </div>
+          <div class="kpi-hint">Cuando el inventario real llega a este nivel, debe generarse un nuevo pedido.</div>
         </div>
       </div>
 
       <div style="margin-top:1.25rem;">
         <div style="font-size:.7rem;color:var(--text-dim);line-height:1.4;">
-          Estos valores son simulados para fines académicos.
-          En una planta real habría SKU diferentes:
-          botellas 600ml, 1.5L, tapas, etiquetas, jarabe,
-          cada uno con su propio ROP.
+          Estos valores son simulados para fines académicos. En una planta real habría SKU diferentes:
+          botellas 600ml, 1.5L, tapas, etiquetas, jarabe, cada uno con su propio ROP.
         </div>
       </div>
 
       <div style="margin-top:1rem;" class="hero-actions">
-        <a class="btn ghost" href="#actividad">
-          📝 Resolver actividad
-        </a>
+        <a class="btn ghost" href="#plan">📅 Ver plan</a>
       </div>
     </aside>
   </main>
@@ -953,8 +478,7 @@
   <!-- PIE -->
   <footer class="site-footer">
     Proyecto académico para análisis de inventarios en una línea de embotellado Pepsi.
-    <br/>
-    Las cifras mostradas son aproximaciones educativas.
+    <br/>Las cifras mostradas son aproximaciones educativas.
   </footer>
 
 </body>
